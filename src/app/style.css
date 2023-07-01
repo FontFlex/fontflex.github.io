@@ -1,0 +1,19 @@
+body {
+    background-color: #1c1f23;
+    color: white;
+    font-family: 'Jetbrains Mono';
+    padding: 20px;
+}
+
+#header {
+    height: 100px;
+    background-color: #6466E9;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#statement {
+    text-align: center;
+    margin-top: 12px;
+}
