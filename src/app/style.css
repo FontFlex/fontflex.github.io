@@ -77,7 +77,7 @@ body {
 }
 
 .image {
-  width: 50px;
+  width: 50px; 
   margin-left: 75px;
   margin-right: 160px;
   width: 150px;
@@ -239,7 +239,7 @@ p {
     input[type="email"] {
       background-color: #1c1f23;
       border: 1px solid;
-      border-color: #6466E9;
+      border-color:  #6466E9;
       width: 210px;
       height: 45px;
       border: 1px solid;
