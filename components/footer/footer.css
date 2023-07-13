@@ -1,0 +1,18 @@
+#footer {
+    text-align: center;
+  }
+  
+  #top {
+    gap: 30px;
+  }
+  
+  #top a {
+    display: inline-block;
+  }
+  
+  a {
+    color: #3662E3;
+    text-decoration: none;
+    gap: 30px;
+    padding-left: 50px;
+  }
