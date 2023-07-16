@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.quick-stuff {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  gap: 10px;
+}
+
+#profile-selector {
+  border: 1px solid #2954d7;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  width: 80px;
+  position: absolute;
+  float: right;
+  top: 55px;
+  right: 5px;
+}
+
+a {
+  color: #2954d7;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+#content-selector {
+  border: 1px solid #2954d7;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  width: 80px;
+  position: absolute;
+  float: right;
+  top: 55px;
+  right: 5px;
+}
