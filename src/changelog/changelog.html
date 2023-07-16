@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GitHub Release Contents</title>
+  <style>
+    .release {
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #2954d7;
+      border-radius: 15px;
+      padding-bottom: 45px;
+    }
+
+    .release h1 {
+      font-size: 18px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .release .release-type {
+      font-weight: bold;
+      margin-left: 10px;
+    }
+
+    .release .latest {
+      color: green;
+      display: inline-block;
+      padding: 5px 10px;
+      font-size: 13px;
+      border-radius: 400px;
+      border: 3px solid green;
+      background-color: transparent;
+      margin-left: 10px;
+    }
+
+    .release .pre-release {
+      color: orange;
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 400px;
+      border: 3px solid orange;
+      background-color: transparent;
+      font-size: 13px;
+      margin-left: 10px;
+    }
+
+    a {
+      color: #2954d7;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    #releases {
+      display: flex;
+      flex-direction: column-reverse; /* Display releases in reverse order */
+    }
+
+    .release-button {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+    }
+
+    .release-button button {
+      background-color: #2954d7;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 15px;
+      border: 0;
+      font-weight: bold;
+      cursor: pointer;
+      position: absolute;
+      float: left;
+      left: 15px;
+      top: 2px;
+    }
+  </style>
+</head>
+<body>
+  <h1>FontFlex Releases</h1>
+  <div id="releases"></div>
+
+  <script>
+    // GitHub organization and repository information
+    const org = 'FontFlex';
+    const repo = 'FontFlex';
+
+    // Fetch releases from GitHub REST API
+    fetch(`https://api.github.com/repos/${org}/${repo}/releases`)
+      .then(response => response.json())
+      .then(releases => {
+        const releasesContainer = document.getElementById('releases');
+        releases.reverse();
+
+        // Iterate over each release and generate HTML
+        releases.forEach((release, index) => {
+          const releaseDiv = document.createElement('div');
+          releaseDiv.className = 'release';
+
+          const releaseName = document.createElement('h1');
+          releaseName.textContent = release.name;
+
+          const releaseStatus = document.createElement('span');
+          releaseStatus.textContent = index === 0 ? ' Latest Release' : ' Pre-release';
+          releaseStatus.className = index === 0 ? 'latest' : 'pre-release';
+          releaseName.appendChild(releaseStatus);
+
+          releaseDiv.appendChild(releaseName);
+
+          const releaseButton = document.createElement('div');
+          releaseButton.className = 'release-button';
+
+          const button = document.createElement('button');
+          button.textContent = 'Go to Release';
+          button.addEventListener('click', () => {
+            window.open(release.html_url, '_blank'); // Open release link in a new tab
+          });
+
+          releaseButton.appendChild(button);
+          releaseDiv.appendChild(releaseButton);
+
+          const releaseContents = document.createElement('div');
+          releaseContents.innerHTML = release.body;
+
+          releaseDiv.appendChild(releaseContents);
+
+          releasesContainer.appendChild(releaseDiv);
+        });
+      })
+      .catch(error => {
+        console.log('Error fetching releases:', error);
+      });
+  </script>
+</body>
+</html>
