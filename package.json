@@ -2,7 +2,7 @@
   "name": "fontflex-ghpages",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://fontflex.github.io",
+  "homepage": "https://fontflex.github.io/fontflex.github.io",
   "type": "module",
   "scripts": {
     "dev": "vite",
