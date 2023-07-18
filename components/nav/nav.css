@@ -30,6 +30,7 @@ a {
 }
 
 #content-selector {
+  text-align: left;
   border: 1px solid #2954d7;
   border-radius: 10px;
   padding: 10px;
