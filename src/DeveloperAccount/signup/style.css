@@ -1,0 +1,53 @@
+#highlight {
+    color: #2954d7;
+}
+
+#createAccount-h1 {
+    margin-top: -80px;
+    font-size: 30px;
+}
+
+#required {
+    color: red;
+}
+
+#firstRow {
+    border: 1.5px solid #6C727F;
+    padding: 40px;
+    border-radius: 15px;
+}
+
+#br {
+    margin-top: 15px;
+}
+
+input {
+    margin: 10px;
+}
+
+input[type="text"] {
+    border: 1px solid #2954d7;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+input[type="password"] {
+    border: 1px solid #2954d7;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+select {
+    border: 1px solid #2954d7;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+input[type="submit"] {
+    background-color: #2954d7;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: 0;
+
+}
