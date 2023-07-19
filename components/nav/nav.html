@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="nav.css">
+    <title></title>
+</head>
+<body>
+    <script>
+        function toggleAppDrawer() {
+            var appSelector = document.getElementById("app-select");
+            var profileSelector = document.getElementById("profile-selector");
+            var contentSelector = document.getElementById("content-selector");
+
+            if (appSelector.style.display === "none") {
+                appSelector.style.display = "block";
+                profileSelector.style.display = "none";
+                contentSelector.style.display = "none";
+            } else {
+                appSelector.style.display = "none";
+            }
+        }
+
+        function toggleProfileSelector() {
+            var appSelector = document.getElementById("app-select");
+            var profileSelector = document.getElementById("profile-selector");
+            var contentSelector = document.getElementById("content-selector");
+
+            if (profileSelector.style.display === "none") {
+                appSelector.style.display = "none";
+                profileSelector.style.display = "block";
+                contentSelector.style.display = "none";
+            } else {
+                profileSelector.style.display = "none";
+            }
+        }
+
+        function toggleContentMaker() {
+            var appSelector = document.getElementById("app-select");
+            var profileSelector = document.getElementById("profile-selector");
+            var contentSelector = document.getElementById("content-selector");
+
+            if (contentSelector.style.display === "none") {
+                appSelector.style.display = "none";
+                profileSelector.style.display = "none";
+                contentSelector.style.display = "block";
+            } else {
+                contentSelector.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="quick-stuff">
+        <img class="plus" src="/assets/svg/lucide/navbar/plus.svg" onclick="toggleContentMaker()" height="40px" width="40px">
+        <img class="account" src="/assets/svg/lucide/navbar/person.svg" onclick="toggleProfileSelector(); displayProfileRelatedLinks();" height="40" width="40">
+    </div>
+
+    <div id="profile-selector" style="display: none;">
+        <a href="http://127.0.0.1:5500/profile/profile.html">Profile</a>
+        <br>
+        <a href="http://127.0.0.1:5500/dashboard/dashboard.html#/bookmarks">Dashboard</a>
+        <br>
+        <a href="http://127.0.0.1:5500/hook-page/hook.html">Logout</a>
+    </div>
+
+
+    <div id="content-selector" style="display: none;">
+        <a href="http://127.0.0.1:5500/profile/profile.html">New App</a>
+        <br>
+        <a href="http://127.0.0.1:5500/dashboard/dashboard.html#/bookmarks">Dashboard</a>
+        <br>
+    </div>
+
+    <div class="nav-menus" style="position: sticky; display: flex !important;">
+        <div class="profile-image-container">
+            <script>
+                function displayProfileRelatedLinks() {
+                    var divElement = document.getElementById('profileLinks');
+                    // Set the display property of the div element to "block"
+                    divElement.style.display = 'block';
+                }
+
+                function toggleProfileSelector() {
+                    var profileSelector = document.getElementById("profile-selector");
+                    var contentSelector = document.getElementById("content-selector");
+
+                    if (profileSelector.style.display === "none") {
+                        profileSelector.style.display = "block";
+                        contentSelector.style.display = "none";
+                    } else {
+                        profileSelector.style.display = "none";
+                    }
+                }
+
+                function toggleContentMaker() {
+                    var profileSelector = document.getElementById("profile-selector");
+                    var contentSelector = document.getElementById("content-selector");
+
+                    if (contentSelector.style.display === "none") {
+                        contentSelector.style.display = "block";
+                        profileSelector.style.display = "none";
+                    } else {
+                        contentSelector.style.display = "none";
+                    }
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>
